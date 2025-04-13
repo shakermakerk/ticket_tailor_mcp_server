@@ -19,9 +19,9 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.11",
     install_requires=[
-        "fastmcp>=0.1.0",
+        "mcp",
         "httpx>=0.24.0",
         "python-dotenv>=1.0.0",
     ],

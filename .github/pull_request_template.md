@@ -18,18 +18,16 @@ Please delete options that are not relevant.
 
 If you're implementing a new API endpoint, please check off these items:
 
-- [ ] Added function to `ticket_tailor.py` following project patterns
+- [ ] Added function to `src/ticket_tailor/ticket_tailor_funcs.py` following project patterns
 - [ ] Included proper type hints and comprehensive docstrings
-- [ ] Added unit tests in `tests/test_ticket_tailor.py`
-- [ ] Created an example script in `examples/`
+- [ ] Created an example script if needed
 - [ ] Updated ROADMAP.md to mark implementation as complete
 
 ## How Has This Been Tested?
 
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce.
+Please describe how you verified your changes:
 
-- [ ] Unit tests
-- [ ] Manual testing with example script
+- [ ] Manual testing
 - [ ] Other (please describe)
 
 ## API Documentation Reference

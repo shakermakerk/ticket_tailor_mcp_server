@@ -2,10 +2,6 @@
 
 Thank you for your interest in contributing to this project! Here's how you can help.
 
-## Code of Conduct
-
-Please be respectful and considerate of others when contributing to this project. See our [Code of Conduct](CODE_OF_CONDUCT.md) for more details.
-
 ## Getting Started
 
 1. Check the [Roadmap](ROADMAP.md) for endpoints that need implementation
@@ -29,19 +25,15 @@ We welcome contributions that implement new Ticket Tailor API endpoints. Please 
 
 1. Choose an endpoint from the [Roadmap](ROADMAP.md) that isn't yet implemented
 2. Create an issue in the repository indicating which endpoint you're working on
-3. Review the [Implementation Template](docs/implementation_template.md) to understand the expected structure
-4. Implement the endpoint following the established patterns
-5. Add tests for your implementation
-6. Create an example script in the `examples/` directory
-7. Update the README.md if necessary
-8. Submit a pull request
+3. Implement the endpoint following the established patterns in `src/ticket_tailor/ticket_tailor_funcs.py`
+4. Create an example script if needed
+5. Update the README.md if necessary
+6. Submit a pull request
 
 ## Making Changes
 
 1. Make your changes to the codebase
-2. Write or update tests as necessary
-3. Run tests to ensure your changes work properly
-4. Ensure your code follows our coding standards
+2. Ensure your code follows our coding standards
 
 ## Submitting a Pull Request
 
@@ -68,9 +60,8 @@ We welcome contributions that implement new Ticket Tailor API endpoints. Please 
 
 ## Testing
 
-- Write tests for new features or bug fixes
-- Run the existing test suite before submitting
-- Test commands: `pytest` or `python -m pytest`
+- Manual testing is encouraged for new features or bug fixes
+- Document how to test your changes in the PR description
 
 ## Reporting Bugs
 

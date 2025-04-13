@@ -1,6 +1,6 @@
 # Ticket Tailor API Integration
 
-A Python wrapper for the Ticket Tailor API that makes it easy to interact with events and orders from your Ticket Tailor account.
+A Python MCP wrapper for the Ticket Tailor API that makes it easy for LLM's to interact with the Ticket Tailor API. Still very early stages but the groundwork has all been done. Now its about building out functions for the various end points. We can also build out specific tools that dont just get/post/patch data but perform work on the data. I have functions to create events in code elsewhere that i will bring in later. 
 
 ## Features
 
@@ -12,7 +12,7 @@ A Python wrapper for the Ticket Tailor API that makes it easy to interact with e
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ticket_tailor_mcp_server.git
+git clone https://github.com/shakermakerk/ticket_tailor_mcp_server.git
 cd ticket_tailor_mcp_server
 
 # Install dependencies
@@ -21,61 +21,29 @@ pip install -r requirements.txt
 
 ## Setup
 
-1. Create a `.env` file in the root directory
-2. Add your Ticket Tailor API key:
-   ```
-   TICKET_TAILOR_API_KEY=your_api_key_here
-   ```
+1. Create a `.env` file in the root directory based on the `.env_example` file to add your Ticket Tailor API key
 
 ## Usage
 
-### Basic Example
+### To use with Cursor (Not that we would generally want to do this):
 
-```python
-from ticket_tailor import mcp, get_ticket_tailor_events
-
-# Get published events for the next 60 days
-events = get_ticket_tailor_events()
+edit mcp.json to add the following
+```
+    "tt-events": {
+      "type": "command",
+      "command": "mcp run /src/ticket_tailor/ticket_tailor_funcs.py" # you may need to edit this path
+    }
 ```
 
 ### Advanced Usage
+```
+Using with our own agents. It depends on the agentic framework that you're using but you generally pass the MCP server in as a tool. Some frameworks like Openai-Agents SDK that are naturally async require some helper functions. I can provide examples if reqested. in ticket_tailor_mcp_server/src/ticket_tailor/example_langgraph_agent.py you will see a simple example using langchain react agents (not langgraph).
 
-```python
-# Get events within a specific date range
-events = get_ticket_tailor_events(
-    start_date="2023-10-01T00:00:00Z",
-    end_date="2023-12-31T23:59:59Z",
-    limit="50",
-    status="published"
-)
-
-# Get orders for a specific event
-from ticket_tailor import get_ticket_tailor_orders
-
-orders = get_ticket_tailor_orders(
-    event_id="evt-abcd1234",
-    status="completed",
-    limit="100"
-)
 ```
 
 ## API Reference
 
-### `get_ticket_tailor_events`
-
-Retrieve events from the Ticket Tailor API.
-
-Parameters:
-- `start_date` (ISO format date string): Start date for event filtering
-- `end_date` (ISO format date string): End date for event filtering
-- `limit` (string): Maximum number of events to return
-- `status` (string): Event status, default is "published"
-
-### `get_ticket_tailor_orders`
-
-Retrieve orders from the Ticket Tailor API with extensive filtering options.
-
-See source code or Ticket Tailor API documentation for the full list of parameters.
+See the `src/ticket_tailor` directory for implementation details.
 
 ## Development Roadmap
 
@@ -86,20 +54,6 @@ We're working on implementing more Ticket Tailor API endpoints. See our [Roadmap
 - Guidelines for adding new endpoints
 
 If you'd like to contribute, please check the roadmap for endpoints that need implementation.
-
-## Examples
-
-The `examples/` directory contains scripts demonstrating how to use this package:
-
-- `list_events.py` - Shows how to retrieve and display events
-- `list_orders.py` - Shows how to retrieve and display orders for a specific event
-
-Run the examples after setting up your environment:
-
-```bash
-python examples/list_events.py
-python examples/list_orders.py --event-id evt-abcd1234
-```
 
 ## Contributing
 

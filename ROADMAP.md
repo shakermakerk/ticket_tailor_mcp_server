@@ -53,11 +53,10 @@ These endpoints might be less commonly used by AI agents but provide useful admi
 
 When implementing new endpoints, please follow these guidelines:
 
-1. Add the new function to `ticket_tailor.py`
+1. Add the new function to `src/ticket_tailor/ticket_tailor_funcs.py`
 2. Include comprehensive type hints and docstrings
-3. Add unit tests in the `tests` directory
-4. Create an example script in the `examples` directory
-5. Update the README.md to document the new functionality
+3. Create an example script in the `src/ticket_tailor/examples` directory if needed
+4. Update the README.md to document the new functionality
 
 ## Contribution Process
 
